@@ -108,6 +108,7 @@
             this.textBoxEnterName.TabIndex = 0;
             this.textBoxEnterName.Text = "Inserir Nome do Jogador 1";
             this.textBoxEnterName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxEnterName.Click += new System.EventHandler(this.textBoxEnterName_Click);
             this.textBoxEnterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxEnterName_KeyDown);
             // 
             // labelPlayerTurn
@@ -123,26 +124,25 @@
             // 
             // labelPlayerA
             // 
-            this.labelPlayerA.AutoSize = true;
             this.labelPlayerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.labelPlayerA.ForeColor = System.Drawing.Color.Red;
-            this.labelPlayerA.Location = new System.Drawing.Point(8, 37);
+            this.labelPlayerA.Location = new System.Drawing.Point(110, 37);
             this.labelPlayerA.Name = "labelPlayerA";
-            this.labelPlayerA.Size = new System.Drawing.Size(73, 17);
+            this.labelPlayerA.Size = new System.Drawing.Size(183, 17);
             this.labelPlayerA.TabIndex = 2;
             this.labelPlayerA.Text = "Jogador A";
+            this.labelPlayerA.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelPlayerB
             // 
-            this.labelPlayerB.AutoSize = true;
             this.labelPlayerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.labelPlayerB.ForeColor = System.Drawing.Color.Blue;
-            this.labelPlayerB.Location = new System.Drawing.Point(711, 37);
+            this.labelPlayerB.Location = new System.Drawing.Point(535, 37);
             this.labelPlayerB.Name = "labelPlayerB";
-            this.labelPlayerB.Size = new System.Drawing.Size(73, 17);
+            this.labelPlayerB.Size = new System.Drawing.Size(180, 17);
             this.labelPlayerB.TabIndex = 3;
             this.labelPlayerB.Text = "Jogador B";
-            this.labelPlayerB.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelPlayerB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelGridPlayerA
             // 
@@ -255,6 +255,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = global::Batalha_Naval.Properties.Resources.Pacific;
             this.groupBox1.Controls.Add(this.labelColumnJ_P1);
             this.groupBox1.Controls.Add(this.labelColumnI_P1);
             this.groupBox1.Controls.Add(this.labelColumnH_P1);
@@ -385,6 +386,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.BackgroundImage = global::Batalha_Naval.Properties.Resources.Pacific;
             this.groupBox2.Controls.Add(this.labelColumnJ_P2);
             this.groupBox2.Controls.Add(this.labelColumnI_P2);
             this.groupBox2.Controls.Add(this.labelColumnH_P2);
@@ -686,10 +688,12 @@
             this.textBoxEnterNameP2.Text = "Inserir Nome do Jogador 2";
             this.textBoxEnterNameP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxEnterNameP2.Visible = false;
+            this.textBoxEnterNameP2.Click += new System.EventHandler(this.textBoxEnterNameP2_Click);
             this.textBoxEnterNameP2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxEnterNameP2_KeyDown);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkRed;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jogoToolStripMenuItem,
             this.toolStripMenuItem1});
@@ -754,6 +758,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Batalha_Naval.Properties.Resources.Pacific;
             this.ClientSize = new System.Drawing.Size(800, 550);
             this.Controls.Add(this.textBoxEnterNameP2);
             this.Controls.Add(this.buttonStart);
@@ -834,8 +839,6 @@
         private System.Windows.Forms.Label labelColumn6_P2;
         private System.Windows.Forms.TextBox textBoxTimerPlayerB;
         private System.Windows.Forms.TextBox textBoxTimerPlayerA;
-        private System.Windows.Forms.Timer timerPlayerA;
-        private System.Windows.Forms.Timer timerPlayerB;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.TextBox textBoxEnterNameP2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -848,6 +851,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.CheckBox checkBoxTimedGame;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.Timer timerPlayerA;
+        public System.Windows.Forms.Timer timerPlayerB;
     }
 }
 

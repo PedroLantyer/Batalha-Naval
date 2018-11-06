@@ -33,6 +33,7 @@
             this.checkBoxWinRecord = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxGameSpeed = new System.Windows.Forms.GroupBox();
+            this.buttonApplyCustomTime = new System.Windows.Forms.Button();
             this.textBoxGameSpeed = new System.Windows.Forms.TextBox();
             this.radioButtonCustomSpeed = new System.Windows.Forms.RadioButton();
             this.radioButtonFastGame = new System.Windows.Forms.RadioButton();
@@ -54,12 +55,12 @@
             // 
             // groupBoxGameSpeed
             // 
+            this.groupBoxGameSpeed.Controls.Add(this.buttonApplyCustomTime);
             this.groupBoxGameSpeed.Controls.Add(this.textBoxGameSpeed);
             this.groupBoxGameSpeed.Controls.Add(this.radioButtonCustomSpeed);
             this.groupBoxGameSpeed.Controls.Add(this.radioButtonFastGame);
             this.groupBoxGameSpeed.Controls.Add(this.radioButtonNormalGame);
             this.groupBoxGameSpeed.Controls.Add(this.radioButtonSlowGame);
-            this.groupBoxGameSpeed.Enabled = false;
             this.groupBoxGameSpeed.Location = new System.Drawing.Point(12, 35);
             this.groupBoxGameSpeed.Name = "groupBoxGameSpeed";
             this.groupBoxGameSpeed.Size = new System.Drawing.Size(200, 121);
@@ -68,11 +69,21 @@
             this.groupBoxGameSpeed.Text = "Velocidade:";
             this.groupBoxGameSpeed.EnabledChanged += new System.EventHandler(this.groupBoxGameSpeed_EnabledChanged);
             // 
+            // buttonApplyCustomTime
+            // 
+            this.buttonApplyCustomTime.Location = new System.Drawing.Point(124, 88);
+            this.buttonApplyCustomTime.Name = "buttonApplyCustomTime";
+            this.buttonApplyCustomTime.Size = new System.Drawing.Size(36, 20);
+            this.buttonApplyCustomTime.TabIndex = 5;
+            this.buttonApplyCustomTime.Text = "OK";
+            this.buttonApplyCustomTime.UseVisualStyleBackColor = true;
+            this.buttonApplyCustomTime.Click += new System.EventHandler(this.buttonApplyCustomTime_Click);
+            // 
             // textBoxGameSpeed
             // 
-            this.textBoxGameSpeed.Enabled = false;
             this.textBoxGameSpeed.Location = new System.Drawing.Point(74, 88);
             this.textBoxGameSpeed.Name = "textBoxGameSpeed";
+            this.textBoxGameSpeed.ReadOnly = true;
             this.textBoxGameSpeed.Size = new System.Drawing.Size(44, 20);
             this.textBoxGameSpeed.TabIndex = 4;
             this.textBoxGameSpeed.Text = "00:00";
@@ -87,6 +98,7 @@
             this.radioButtonCustomSpeed.TabIndex = 3;
             this.radioButtonCustomSpeed.Text = "Custom:";
             this.radioButtonCustomSpeed.UseVisualStyleBackColor = true;
+            this.radioButtonCustomSpeed.Click += new System.EventHandler(this.radioButtonCustomSpeed_Click);
             // 
             // radioButtonFastGame
             // 
@@ -101,10 +113,12 @@
             // radioButtonNormalGame
             // 
             this.radioButtonNormalGame.AutoSize = true;
+            this.radioButtonNormalGame.Checked = true;
             this.radioButtonNormalGame.Location = new System.Drawing.Point(6, 42);
             this.radioButtonNormalGame.Name = "radioButtonNormalGame";
             this.radioButtonNormalGame.Size = new System.Drawing.Size(94, 17);
             this.radioButtonNormalGame.TabIndex = 1;
+            this.radioButtonNormalGame.TabStop = true;
             this.radioButtonNormalGame.Text = "Normal (01:00)";
             this.radioButtonNormalGame.UseVisualStyleBackColor = true;
             // 
@@ -129,7 +143,6 @@
             this.Name = "Options";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
-            this.Activated += new System.EventHandler(this.Options_Activated);
             this.Load += new System.EventHandler(this.Options_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBoxGameSpeed.ResumeLayout(false);
@@ -148,5 +161,6 @@
         public System.Windows.Forms.RadioButton radioButtonNormalGame;
         public System.Windows.Forms.RadioButton radioButtonSlowGame;
         public System.Windows.Forms.GroupBox groupBoxGameSpeed;
+        private System.Windows.Forms.Button buttonApplyCustomTime;
     }
 }

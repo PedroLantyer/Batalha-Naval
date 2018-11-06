@@ -21,24 +21,34 @@ namespace Batalha_Naval
         {
         }
 
-        private void Options_Activated(object sender, EventArgs e)
-        {
-            /*FormUXdesign formUXdesign = new FormUXdesign();
-            formUXdesign.Close();
-            groupBoxGameSpeed.Enabled = formUXdesign.getTimedGame();*/
-        }
-
         private void groupBoxGameSpeed_EnabledChanged(object sender, EventArgs e)
         {
-            FormUXdesign formUXdesign = new FormUXdesign();
-            if (formUXdesign.checkBoxTimedGame.Enabled == true)
+        }
+
+        private void radioButtonCustomSpeed_Click(object sender, EventArgs e)
+        {
+            if (radioButtonCustomSpeed.Checked == true)
+                textBoxGameSpeed.ReadOnly = false;
+        }
+
+        private void buttonApplyCustomTime_Click(object sender, EventArgs e)
+        {
+            int CustomTime;
+            bool sucess = Int32.TryParse(textBoxGameSpeed.Text, out CustomTime);
+            if (sucess == false)
             {
-                groupBoxGameSpeed.Enabled = true;
-                radioButtonNormalGame.Checked = true;
+                textBoxGameSpeed.Text = "00:00";
+                MessageBox.Show("Introduza um numero inteiro entre 1 e 300");
             }
-            if (formUXdesign.checkBoxTimedGame.Enabled == false)
+            else
             {
-                groupBoxGameSpeed.Enabled = false;
+                if (CustomTime >= 5 && CustomTime <= 300)
+                {
+                    textBoxGameSpeed.Text = textBoxGameSpeed.Text;
+                    FormUXdesign formUXdesign = new FormUXdesign();
+                    formUXdesign.timerPlayerB.Interval = CustomTime * 1000;
+                    MessageBox.Show("Tempo definido para " + textBoxGameSpeed.Text + " segundos");
+                }
             }
         }
     }

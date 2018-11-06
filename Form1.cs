@@ -70,6 +70,11 @@ namespace Batalha_Naval
             PlayerB_Grid.DrawLine(p, BlockSize * NumOfBlocks, BlockSize * NumOfBlocks, 0, NumOfBlocks * BlockSize);
         }
 
+        private void textBoxEnterName_Click(object sender, EventArgs e)
+        {
+            textBoxEnterName.Text = "";
+        }
+
         private void textBoxEnterName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -83,6 +88,11 @@ namespace Batalha_Naval
                     Select(true, true);
                 }
     }
+
+        private void textBoxEnterNameP2_Click(object sender, EventArgs e)
+        {
+            textBoxEnterNameP2.Text = "";
+        }
 
         private void textBoxEnterNameP2_KeyDown(object sender, KeyEventArgs e)
         {
@@ -162,21 +172,9 @@ namespace Batalha_Naval
                 timerPlayerA.Enabled = false;
                 timerPlayerB.Enabled = false;
             }
+            FormStrategyPlayerA formStrategyPlayerA = new FormStrategyPlayerA();
+            formStrategyPlayerA.ShowDialog();
+            formStrategyPlayerA.Close();
         }
-
-        /* public bool getTimedGame()
-         {
-             if (checkBoxTimedGame.Checked == true)
-             {
-                 bool TimedGame = true;
-                 return TimedGame;
-             }
-             else
-             {
-                 bool TimedGame = false;
-                 return TimedGame;
-             }
-         }*/
-
     }
     }
